@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:54:42 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 10:31:23 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:31:33 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ responseData DeleteMethod::handleMethod(void)
         file.close();
         if (std::remove(resourcePath.c_str()) == 0) {
             this->_res = setResponseData(NO_CONTENT, "", "", 0);
-            Logger::info << "Resource deleted successfully." << std::endl;
+            Logs::printLog(Logs::INFO, 3, "Resource deleted sucessfully!");
         } else {
             this->_res = this->_errorPage.getErrorPageContent(this->_req.getErrorPageConfig(),
                                                               INTERNAL_SERVER_ERROR,
                                                               this->_req.getUri(),
                                                               this->_req.getRoot());
-            Logger::info << "Error deleting resource." << std::endl;
+            Logs::printLog(Logs::INFO, 3, "Error deleting resource!");
         }
     } else {
         this->_res = this->_errorPage.getErrorPageContent(
             this->_req.getErrorPageConfig(), NOT_FOUND, this->_req.getUri(), this->_req.getRoot());
-        Logger::info << "Resource not found." << std::endl;
+        Logs::printLog(Logs::INFO, 3, "Resource not foud!");
     }
     return (this->_res);
 }
