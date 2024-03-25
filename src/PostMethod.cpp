@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:33 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:55:34 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:31:57 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,22 @@ responseData PostMethod::handleMethod()
                                                       ENTITY_TOO_LARGE,
                                                       _req.getUri(),
                                                       _req.getRoot());
-                Logger::error << "Request Entity Too Large." << std::endl;
+                Logs::printLog(Logs::ERROR, 6, "Request entity too large");
                 return (_res);
             }
             if (created && _file == true) {
                 _res = getJson(
                     "{\"status\": \"success\", \"message\": \"Resource created successfully\"}",
                     201);
-                Logger::info << "File created." << std::endl;
+                Logs::printLog(Logs::INFO, 6, "File Created");
                 return (_res);
             } else if (!created && _file == true) {
                 _res = _errorPage.getErrorPageContent(_req.getErrorPageConfig(),
                                                       INTERNAL_SERVER_ERROR,
                                                       _req.getUri(),
                                                       _req.getRoot());
-                Logger::error << "Unable to create file." << std::endl;
+        
+                Logs::printLog(Logs::ERROR, 6, "Unable to crate file");
                 return (_res);
             }
         }
@@ -56,7 +57,7 @@ responseData PostMethod::handleMethod()
             std::cout << "Body: " << _req.getBody() << "\n";
 
         _res = getJson("{\"status\": \"success\", \"message\": \"Successful operation\"}", OK);
-        Logger::info << "Post request completed successfully." << std::endl;
+        Logs::printLog(Logs::INFO, 6, "Post request completed sucessfully");
     } else if (!_req.has_body) {
         _res = _errorPage.getErrorPageContent(
             _req.getErrorPageConfig(), BAD_REQUEST, _req.getUri(), _req.getRoot());
