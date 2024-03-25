@@ -6,14 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:53:32 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:53:33 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:18:20 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 
-#include "Logger.hpp"
+
 #include "Libs.hpp"
 
 class Poll {

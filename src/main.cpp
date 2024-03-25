@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:10 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 10:27:21 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:16:46 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ int main(int argc, char *argv[])
         Logs::printLog(Logs::ERROR, 1, "Invalid number of arguments");
         return (1);
     }
-    for (int i = 1; i < argc; ++i) {
-        std::string arg(argv[i]);
 
+    if(argc == 3){
+        std::string arg(argv[2]);
         if (arg == "-a") {
             server.setVerbose(true);
-            break;
+        }else{
+            Logs::printLog(Logs::ERROR, 1, "Invalid value of arguments");
         }
+        return(1);
     }
     signal(SIGINT, handleSignal);
     server.initParser(argv[1]);
