@@ -6,12 +6,15 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:53:26 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:53:28 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:57:00 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#pragma once
+
+#ifndef PARSE_HPP
+#define PARSE_HPP
+
 
 #include "Libs.hpp"
 #include "Logger.hpp"
@@ -52,3 +55,6 @@ std::string removeExtraSpaces(const std::string& input);
 params* setParams(const std::string str, params* vconfs);
 bool verifyBlockEnd(const std::string& text);
 bool verifyLineEmpty(const std::string& text);
+
+
+#endif

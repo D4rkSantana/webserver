@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:50:06 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:23:33 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:49:15 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #pragma once
 #include "library.hpp"
-
 
 #include <algorithm>
 #include <cerrno>
@@ -43,6 +42,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+#include "library.hpp"
 
 
 

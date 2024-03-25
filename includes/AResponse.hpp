@@ -6,12 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:49:07 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 13:42:41 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:53:47 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#pragma once
+#ifndef ARESPONSE_HPP
+#define ARESPONSE_HPP
+
 
 #include "ErrorPage.hpp"
 #include "Libs.hpp"
@@ -31,3 +33,6 @@ class AHttpResponse {
 
     virtual responseData handleMethod(void) = 0;
 };
+
+
+#endif
