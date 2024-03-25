@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:16 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 13:48:49 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:49:12 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ std::vector<std::string> Parser::getLocationParam (int serverIndex, int location
         std::vector<std::string> vparam = (*_cservers[serverIndex].locations[location])[param];
         if (this->_verbose) {
             for (size_t i = 0; i < vparam.size(); i++) {
-              //  Logs::printLog(Logs::VERBOSE, 4, param + "[" + to_string(location) + "]" + ": " + vparam[i]);
-                Logger::verbose << param << "[" << location << "]" << ": " << vparam[i] << std::endl;
+                Logs::printLog(Logs::VERBOSE, 4, param + "[" + to_string(location) + "]" + ": " + vparam[i]);
+
             }
         }
         return vparam;
@@ -124,10 +124,10 @@ std::vector<int> Parser::getSizeServers () {
     if (this->_verbose) {
         for (size_t i = 0; i < sizeServers.size(); i++) {
             if (i == 0) {
-                Logger::verbose << "Server size: " << sizeServers[i] << std::endl;
+                Logs::printLog(Logs::VERBOSE, 4,"Server size: " + sizeServers[i]);
             } else {
-                Logger::verbose << "Location size"
-                                << "(server[" << i - 1 << "]): " << sizeServers[i] << std::endl;
+                 Logs::printLog(Logs::VERBOSE, 4, "Location size:" + sizeServers[i]);
+
             }
         }
     }
@@ -150,7 +150,7 @@ void Parser::setConfs(const char* fileconf) {
 
     std::ifstream conf(fileconf);
     if (!conf.is_open()) {
-        Logger::error << "Error opening file" << std::endl;
+        Logs::printLog(Logs::ERROR, 4, "Opening file" );
         exit(1);
     }
     conf.clear();

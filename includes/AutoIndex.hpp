@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:49:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 13:55:46 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:53:36 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "ErrorPage.hpp"
 #include "Libs.hpp"
-#include "Logger.hpp"
+
 #include "Request.hpp"
 #include "ResponseHandlers.hpp"
 #include "utils.hpp"

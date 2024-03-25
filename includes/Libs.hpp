@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:50:06 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 13:49:15 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:00:20 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@
 #include <unistd.h>
 
 #include "library.hpp"
-
 
 
 #define IP "127.0.0.1"
