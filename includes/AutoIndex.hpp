@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:49:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:49:15 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:42:35 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "Request.hpp"
 #include "ResponseHandlers.hpp"
 #include "utils.hpp"
+
 
 class AutoIndex {
     public:

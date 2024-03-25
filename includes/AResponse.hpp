@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:49:07 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:49:08 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:42:41 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ErrorPage.hpp"
 #include "Libs.hpp"
 #include "Request.hpp"
+
 
 class AHttpResponse {
     protected:
