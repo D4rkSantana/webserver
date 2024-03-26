@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:54:11 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 13:58:13 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:02:55 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,17 @@ responseData setResponseData(int         status,
                              std::string location = "");
 std::string  vector_join(std::vector<std::string> vec, std::string delimiter);
 
-template <typename ValueType>
-std::string to_string(ValueType v);
+
 std::string getDir();
 std::string getBin(const std::string &url);
+
+
+
+
+template <typename T>
+std::string to_string(T s);
+#include "../src/to_string.tpp"
+
 
 
 #endif

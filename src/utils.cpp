@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:58 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 23:49:01 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/26 09:21:56 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,10 +152,4 @@ std::string vector_join(std::vector<std::string> vec, std::string delimiter)
     return (result);
 }
 
-template <typename ValueType>
-std::string to_string(ValueType v)
-{
-    std::ostringstream oss;
-    oss << v;
-    return oss.str();
-}
+

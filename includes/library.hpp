@@ -1,21 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Libs.hpp                                           :+:      :+:    :+:   */
+/*   library.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:13:52 by lucasmar          #+#    #+#             */
-/*   Updated: 2024/03/21 11:35:29 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/26 09:33:50 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// my libs
-
-#include "Logs.hpp"
-
-
-
 
 
 
@@ -49,6 +42,23 @@
 #include <vector>
 
 
+// my libs
+
+#include "Logs.hpp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // defines
 
 #define COLOR_RED     "\x1b[31m"
@@ -56,3 +66,7 @@
 #define COLOR_BLUE    "\x1b[34m"
 #define COLOR_GREEN   "\x1b[32m"
 #define COLOR_RESET   "\x1b[0m"
+
+
+
+// function 
