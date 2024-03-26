@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:43 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:55:44 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:48:33 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,8 @@ void ResponseHandlers::_deleteHandler(HttpRequest &request)
 {
     DeleteMethod delete_method(request);
 
-    Logger::warning << "Delete Method" << std::endl;
+  
+    Logs::printLog(Logs::WARNING, 8, "Delete Method ");
 
     this->_res = delete_method.handleMethod();
 }

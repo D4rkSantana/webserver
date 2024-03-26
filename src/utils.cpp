@@ -6,13 +6,12 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:58 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 16:12:50 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:49:01 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "utils.hpp"
-#include "Logger.hpp"
 
 responseData getJson(std::string body, int status)
 {
@@ -67,7 +66,8 @@ std::string getDir()
             dir = dir.substr(0, pos + 7);
         return dir;
     } else {
-        Logger::error << "Error getting current working directory" << std::endl;
+         Logs::printLog(Logs::ERROR, 13, "Getting current working directory");
+      
         return "";
     }
 }
@@ -104,7 +104,7 @@ std::string getBin(const std::string &url)
         binName      = command.c_str();
         FILE *stream = popen(binName, "r");
         if (!stream) {
-            Logger::info << "Error getting binary name" << std::endl;
+             Logs::printLog(Logs::INFO, 13, "Getting Binary name");
             return "";
         }
         char buffer[1024];
@@ -114,10 +114,11 @@ std::string getBin(const std::string &url)
             bin.erase(std::remove(bin.begin(), bin.end(), '\n'), bin.end());
             return bin;
         }
-        Logger::info << "Error getting binary name" << std::endl;
+         Logs::printLog(Logs::INFO, 13, "It doesn't get binary name");
+      
         return "";
     } else {
-        Logger::info << "Error getting binary name" << std::endl;
+         Logs::printLog(Logs::INFO, 13, "It doesn't get binary name");
         return "";
     }
 }

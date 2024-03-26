@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:33 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 16:31:57 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:42:25 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ responseData PostMethod::handleMethod()
     } else if (!_req.has_body) {
         _res = _errorPage.getErrorPageContent(
             _req.getErrorPageConfig(), BAD_REQUEST, _req.getUri(), _req.getRoot());
-        Logger::info << "No content." << std::endl;
+        Logs::printLog(Logs::INFO, 6, "No content.");
     } else {
         _res = _errorPage.getErrorPageContent(
             _req.getErrorPageConfig(), INTERNAL_SERVER_ERROR, _req.getUri(), _req.getRoot());
-        Logger::error << "Internal Server Error." << std::endl;
+        Logs::printLog(Logs::ERROR, 6, "Internal Server ...");
     }
     return (_res);
 }
@@ -165,7 +165,7 @@ void PostMethod::saveFile(std::string &fileName, const std::string &value)
     std::ifstream checkFile(resourcePath.c_str());
     if (checkFile.good()) {
         created = false;
-        Logger::info << "The file already exists." << std::endl;
+        Logs::printLog(Logs::INFO, 6, "The file already exists!");
         return;
     }
     std::ofstream file(resourcePath.c_str(), std::ios::binary);
@@ -173,7 +173,7 @@ void PostMethod::saveFile(std::string &fileName, const std::string &value)
         file.write(value.c_str(), value.length());
         file.close();
         created = true;
-        Logger::info << "File path: " << resourcePath << std::endl;
+        Logs::printLog(Logs::INFO, 6, "File Path:" +  resourcePath);
     } else
         created = false;
 }

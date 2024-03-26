@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:53:42 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 16:19:22 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:49:30 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #pragma once
 
 #include "Libs.hpp"
-#include "Logger.hpp"
+
 #include "Parser.hpp"
 #include "ErrorPage.hpp"
 #include "utils.hpp"

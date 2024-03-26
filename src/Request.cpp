@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:38 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:55:39 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:46:52 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,7 +274,7 @@ bool HttpRequest::_getBody(std::string request)
             return (true);
         }
     } else {
-        Logger::error << "Invalid client_max_body_size." << std::endl;
+        Logs::printLog(Logs::ERROR, 6, "Invalid client_max_body_size");
         return (true);
     }
     return (false);

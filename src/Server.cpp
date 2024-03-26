@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:49 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:55:50 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:41:02 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void Server::initSockets(void)
 
     serverInfo = this->_parser.getSizeServers();
     if (serverInfo.empty()) {
-        Logger::error << "The server was not configured correctly" << std::endl;
+        Logs::printLog(Logs::ERROR, 10, "The server was not configured correctly");
         this->closeServer();
         exit(1);
     }
@@ -47,7 +47,7 @@ void Server::initSockets(void)
             _sockets.push_back(socket);
         }
     } catch (const std::exception &e) {
-        Logger::error << e.what() << std::endl;
+        Logs::printLog(Logs::ERROR, 10, e.what());
         this->closeServer();
         exit(1);
     }
@@ -64,7 +64,7 @@ int Server::run(void)
 {
     while (true) {
         if (this->_poll.execute() == -1) {
-            Logger::error << "Error in poll()" << std::endl;
+            Logs::printLog(Logs::ERROR, 10, "Create poll");
             return (1);
         }
         for (size_t i = 0; i < this->_poll.getSize(); ++i) {
@@ -75,7 +75,7 @@ int Server::run(void)
                 } else {
                     int clientSocket = this->_poll.getPollFd(i);
                     if (clientSocket < 0) {
-                        Logger::error << "Index out of bounds of vector _pollFds" << std::endl;
+                        Logs::printLog(Logs::ERROR, 10, "bound of vector");
                         continue;
                     }
                     _processClientData(clientSocket);
@@ -112,7 +112,7 @@ bool Server::_acceptNewConnection(size_t i)
 
         return (true);
     } catch (const std::exception &e) {
-        Logger::error << e.what() << std::endl;
+        Logs::printLog(Logs::ERROR, 10, e.what());
         return (false);
     }
 }
@@ -164,8 +164,8 @@ void Server::_processClientData(int clientSocket)
     res       = setResponseData(0, "", "", 0);
     clientReq = this->_readClientData(clientSocket);
     if (_bytesRead == -1) {
-        Logger::info << "Client connection closed"
-                     << " on socket " << clientSocket << std::endl;
+        Logs::printLog(Logs::INFO, 10, "Client connection closed");
+     
         this->_poll.addFdToClose(clientSocket);
         return;
     }
@@ -210,16 +210,15 @@ void Server::_sendClientData(int clientSocket, responseData res)
 
     int bytes_sent = send(clientSocket, responseHeader, strlen(responseHeader), MSG_NOSIGNAL);
     if (bytes_sent == -1) {
-        Logger::info << "Client connection closed"
-                     << " on socket " << clientSocket << std::endl;
+         Logs::printLog(Logs::INFO, 10, "Client connection closed");
+
         this->_poll.addFdToClose(clientSocket);
         return;
     }
     if (res.contentLength) {
         int bytes_sent = send(clientSocket, res.content.c_str(), res.contentLength, MSG_NOSIGNAL);
         if (bytes_sent == -1) {
-            Logger::info << "Client connection closed"
-                    << " on socket " << clientSocket << std::endl;
+             Logs::printLog(Logs::INFO, 10, "Client connection closed");
             this->_poll.addFdToClose(clientSocket);
             return;
         }

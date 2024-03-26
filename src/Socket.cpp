@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:55:53 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/21 11:55:54 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:44:31 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void Socket::listenForConnections(void)
         msg = "Error listening for connections: " + std::string(strerror(errno));
         throw Socket::SocketException(msg.c_str());
     }
-    Logger::info << "Listening at " << this->_ip << ":" << this->_port << std::endl;
+     Logs::printLog(Logs::INFO, 12, "Listening at " + this->_ip + ":" + this->_port);
+   
 }
 
 void *Socket::get_in_addr(struct sockaddr *sa)
@@ -100,7 +101,8 @@ int Socket::acceptConnection(int socketFd)
                     INET6_ADDRSTRLEN)
        << " on socket " << clientSocket;
     msg = ss.str();
-    Logger::info << msg << std::endl;
+     Logs::printLog(Logs::INFO, 12, msg);
+   
     return (clientSocket);
 }
 

@@ -6,14 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:54:00 by ryoshio-          #+#    #+#             */
-/*   Updated: 2024/03/25 16:20:09 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2024/03/25 23:49:38 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 
-#include "Logger.hpp"
+
 #include "Libs.hpp"
 
 class Socket {
